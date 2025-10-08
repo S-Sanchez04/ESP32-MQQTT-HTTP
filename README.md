@@ -86,7 +86,7 @@ En este diagrama se puede observar:
 ├── Diagrama.drawio.png
 ├── Subscriber.png
 └── ESP32-Car-Control.postman_collection.json
-openapi.yaml
+└── openapi.yaml
 README.md
 main.ino
 ```
