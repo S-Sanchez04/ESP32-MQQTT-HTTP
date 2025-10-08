@@ -60,3 +60,34 @@ const char* mqtt_topic = "carroESP32/instrucciones";
 A continuación se muestra un ejemplo de lo que ve el suscriptor del tópico `carroESP32/instrucciones` cuando se publica un mensaje:
 
 ![Ejemplo de suscripción](docs/Subscriber.png)
+
+---
+
+## 📊 Diagrama de secuencia
+
+A continuación se presenta el diagrama de secuencia que explica el flujo de interacción entre los componentes del sistema:
+
+![Diagrama de secuencia](docs/Diagrama.drawio.png)
+
+En este diagrama se puede observar:
+
+1. **Cliente**: Envía una solicitud al endpoint `/move` con las instrucciones de movimiento.
+2. **Servidor HTTP**: Procesa la solicitud, ejecuta la acción correspondiente y publica el mensaje en el broker MQTT.
+3. **Broker MQTT**: Recibe y distribuye el mensaje a los suscriptores del tópico `carroESP32/instrucciones`.
+4. **Suscriptor MQTT**: Recibe el mensaje publicado y lo muestra.
+
+---
+
+## 📁 Estructura del repositorio
+
+```bash
+
+/docs
+├── Diagrama.drawio.png
+├── Subscriber.png
+└── ESP32-Car-Control.postman_collection.json
+openapi.yaml
+README.md
+main.ino
+```
+
