@@ -51,3 +51,12 @@ const char* password = "farra2abril";
 const char* mqtt_server = "broker.hivemq.com";
 const int mqtt_port = 1883;
 const char* mqtt_topic = "carroESP32/instrucciones";
+```
+
+---
+
+## 📷 Ejemplo de suscripción
+
+A continuación se muestra un ejemplo de lo que ve el suscriptor del tópico `carroESP32/instrucciones` cuando se publica un mensaje:
+
+![Ejemplo de suscripción](docs/Subscriber.png)

@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "3403fab1-8823-460a-b9dd-85cb7d11f9aa",
+		"name": "ESP32 Car Control API",
+		"description": "API para controlar un carro ESP32 mediante peticiones HTTP.   Los comandos recibidos se publican en un tópico MQTT para ejecución remota.\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35029272"
+	},
+	"item": [
+		{
+			"name": "move",
+			"item": [
+				{
+					"name": "Envía una instrucción de movimiento al carro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "direction",
+									"value": "backward",
+									"description": "Dirección de movimiento del carro."
+								},
+								{
+									"key": "speed",
+									"value": "163",
+									"description": "Velocidad del movimiento (0–255)."
+								},
+								{
+									"key": "duration",
+									"value": "3",
+									"description": "Duración del movimiento en segundos (máximo 5)."
+								}
+							]
+						},
+						"url": {
+							"raw": "{{baseUrl}}/move",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"move"
+							]
+						},
+						"description": "Controla la dirección, velocidad y duración del movimiento del carro.   Además, publica la instrucción en el broker MQTT configurado.\n"
+					},
+					"response": [
+						{
+							"name": "Movimiento aceptado y publicado por MQTT.",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "direction",
+											"value": "backward",
+											"description": "Dirección de movimiento del carro."
+										},
+										{
+											"key": "speed",
+											"value": "163",
+											"description": "Velocidad del movimiento (0–255)."
+										},
+										{
+											"key": "duration",
+											"value": "3",
+											"description": "Duración del movimiento en segundos (máximo 5)."
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/move",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"move"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"ok\",\n  \"message\": \"Instruction published\",\n  \"payload\": {\n    \"direction\": \"forward\",\n    \"speed\": 200,\n    \"duration\": 3,\n    \"client_ip\": \"192.168.1.50\"\n  }\n}"
+						},
+						{
+							"name": "Petición inválida (faltan parámetros)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/x-www-form-urlencoded"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "direction",
+											"value": "backward",
+											"description": "Dirección de movimiento del carro."
+										},
+										{
+											"key": "speed",
+											"value": "163",
+											"description": "Velocidad del movimiento (0–255)."
+										},
+										{
+											"key": "duration",
+											"value": "3",
+											"description": "Duración del movimiento en segundos (máximo 5)."
+										}
+									]
+								},
+								"url": {
+									"raw": "{{baseUrl}}/move",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"move"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Missing parameters direction, speed, duration\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "health",
+			"item": [
+				{
+					"name": "Verifica el estado del servidor y las conexiones",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/health",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"health"
+							]
+						},
+						"description": "Endpoint para comprobar si el ESP32 está activo, y el estado actual del WiFi y MQTT.\n"
+					},
+					"response": [
+						{
+							"name": "Servidor activo",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/health",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"health"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"status\": \"alive\",\n  \"wifi\": \"connected\",\n  \"mqtt\": \"connected\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "ip",
+			"value": "10.251.104.112"
+		},
+		{
+			"key": "baseUrl",
+			"value": "http://{{ip}}"
+		}
+	]
+}
