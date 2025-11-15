@@ -8,10 +8,6 @@
 #define MQTT_TOPIC_CMD "carroESP32/instrucciones"
 #define MQTT_TOPIC_SENSOR "carroESP32/sensor/hcsr04"
 
-#define CERT_CA_PATH "/AmazonRootCA1.pem"
-#define CERT_CRT_PATH "/certificate.pem.crt"
-#define CERT_KEY_PATH "/private.pem.key"
-
 #define HTTP_PORT 80
 #define DEVICE_NAME "esp32-chucho"
 
