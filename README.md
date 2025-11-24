@@ -216,13 +216,12 @@ El proyecto hace uso de las siguientes librerías en main.ino:
 📊 Uso de Memoria
 -----------------
 
-Valores aproximados tras la compilación en Arduino IDE / PlatformIO:
+Valor:
 
-Plaintext
+`   Writing at 0x00112960 [==============================] 100.0% 674196/674196 bytes... 
+Wrote 1059168 bytes (674196 compressed) at 0x00010000 in 17.4 seconds (487.1 kbit/s).
+Hash of data verified. `
 
-`   Uso de memoria de programa (Flash): xxx.xxx bytes (YY% de la memoria disponible).  Uso de memoria dinámica (RAM):      yyy.yyy bytes (ZZ% de la memoria disponible).   `
-
-_(Reemplazar con los valores reales al compilar)_
 
 🧪 Cómo Probar el Sistema
 -------------------------
