@@ -98,7 +98,7 @@ Inicia el movimiento de los motores según los parámetros indicados.
 
 HTTP
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   POST http:///api/v1/move?direction=forward&speed=180&duration=1500   `
+`   POST http:///api/v1/move?direction=forward&speed=180&duration=1500   `
 
 ### 2\. Detener el Carro
 
@@ -122,7 +122,7 @@ Verifica si el dispositivo está en línea y respondiendo.
 
 JSON
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   { "status": "ok" }   `
+`   { "status": "ok" }   `
 
 📡 Interacción MQTT
 -------------------
@@ -140,14 +140,14 @@ Cada vez que se llama a /move o /stop, el ESP32 publica la acción realizada.
 
 JSON
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   {     "direction": "forward",     "speed": 180,     "duration": 1500,     "source": "http"   }   `
+`   {     "direction": "forward",     "speed": 180,     "duration": 1500,     "source": "http"   }   `
 
 *   **Payload (Ejemplo Stop):**
     
 
 JSON
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   {     "direction": "stop",     "speed": 0,     "duration": 0,     "source": "http"   }   `
+`   {     "direction": "stop",     "speed": 0,     "duration": 0,     "source": "http"   }   `
 
 ### 2\. Sensor Ultrasónico (HC-SR04)
 
@@ -160,7 +160,7 @@ Tarea periódica que reporta la distancia medida frente al vehículo.
 
 JSON
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   {     "device": "esp32-chucho",     "distance_cm": 25.3,     "ts": 12345   }   `
+`   {     "device": "esp32-chucho",     "distance_cm": 25.3,     "ts": 12345   }   `
 
 🛠 Librerías Utilizadas
 -----------------------
@@ -220,7 +220,7 @@ Valores aproximados tras la compilación en Arduino IDE / PlatformIO:
 
 Plaintext
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   Uso de memoria de programa (Flash): xxx.xxx bytes (YY% de la memoria disponible).  Uso de memoria dinámica (RAM):      yyy.yyy bytes (ZZ% de la memoria disponible).   `
+`   Uso de memoria de programa (Flash): xxx.xxx bytes (YY% de la memoria disponible).  Uso de memoria dinámica (RAM):      yyy.yyy bytes (ZZ% de la memoria disponible).   `
 
 _(Reemplazar con los valores reales al compilar)_
 
